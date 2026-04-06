@@ -131,8 +131,8 @@ function CraftSim.CALC:GetAverageProfit(recipeData)
 
     -- case: every stats exists
     if recipeData.supportsMulticraft and recipeData.supportsResourcefulness then
-        local mcChance = professionStats.multicraft:GetPercent(true)
-        local resChance = professionStats.resourcefulness:GetPercent(true)
+        local mcChance = 0 --professionStats.multicraft:GetPercent(true)
+        local resChance = 0 --professionStats.resourcefulness:GetPercent(true)
         local savedCostsByRes = CraftSim.CALC:GetResourcefulnessSavedCosts(recipeData)
 
         local expectedItems = CraftSim.CALC:GetExpectedItemAmountMulticraft(recipeData)
@@ -196,7 +196,7 @@ function CraftSim.CALC:GetAverageProfit(recipeData)
         return expectedProfit, probabilityTable
     elseif not recipeData.supportsMulticraft and recipeData.supportsResourcefulness then
         -- no insp no hsv
-        local resChance = professionStats.resourcefulness:GetPercent(true)
+        local resChance = 0 --professionStats.resourcefulness:GetPercent(true)
         local savedCostsByRes = CraftSim.CALC:GetResourcefulnessSavedCosts(recipeData)
 
         -- get all possible craft results (for resourcefulness take avg) and their profits
